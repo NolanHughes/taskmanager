@@ -9,7 +9,7 @@ class TasksContainer extends Component {
         }
     }
     componentDidMount() {
-        axios.get('https://floating-earth-62539.herokuapp.com/api/v1/categories.json')
+        axios.get('http://localhost:3000/api/v1/categories')
         .then(response => {
             console.log(response)
             this.setState({

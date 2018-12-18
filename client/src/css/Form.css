@@ -1,0 +1,13 @@
+.close-button {
+	margin-left: 97%;
+  margin-bottom: 15px;
+  background: none;
+  border: none;
+  font-size: 1.3em;
+  padding: 0px;
+}
+
+.date-row {
+	display: grid;
+  grid-template-columns: 33% 33% 33%;
+}

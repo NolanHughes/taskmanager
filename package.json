@@ -15,5 +15,9 @@
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "immutability-helper": "^2.9.0",
+    "react-router-dom": "^4.3.1"
+  }
 }

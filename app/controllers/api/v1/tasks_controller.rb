@@ -1,17 +1,13 @@
 module Api::V1
   class TasksController < ApplicationController
-    # before_action :authenticate_user!
+    before_action :authenticate_user!
 
     def index
-      # @your_tasks = Task.all.where(:assigned_to_id => current_user.id).order('due_by ASC')
-      # @assigned_tasks = current_user.tasks.where("assigned_to_id != '#{current_user.id}'").order('due_by ASC')
-      # @users = User.all # Change to current team
+      @your_tasks = Task.all.where(:assigned_to_id => current_user.id).order('due_by ASC')
+      @assigned_tasks = current_user.tasks.where("assigned_to_id != '#{current_user.id}'").order('due_by ASC')
+      @users = User.all # Change to current team
 
-      # render json: {your_tasks: @your_tasks, assigned_tasks: @assigned_tasks, users: @users}
-
-      @tasks = Task.all
-
-      render json: @tasks
+      render json: {your_tasks: @your_tasks, assigned_tasks: @assigned_tasks, users: @users}
     end
 
     def create
