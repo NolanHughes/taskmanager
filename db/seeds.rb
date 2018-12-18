@@ -1,3 +1,3 @@
-Categoy.create(name: 'Marketing')
-Categoy.create(name: 'Management')
+Category.create(name: 'Marketing')
+Category.create(name: 'Management')
 
