@@ -12,8 +12,6 @@ export default class Signup extends React.Component {
     }
   }
 
-
-
   handleSignup = (e) => {
     e.preventDefault();
     
@@ -58,30 +56,34 @@ export default class Signup extends React.Component {
     return (
       <div>
         <AppHeader />
-        <div className="login-errors">
-          {errors}
+        <div className="container">
+          <div className="tasks" id="sign-in">
+            <div className="login-errors">
+              {errors}
+            </div>
+            <h2>Sign up</h2>
+            <form onSubmit={this.handleSignup} >
+              <input 
+                name="email" 
+                placeholder="Email" 
+                autoComplete="username" 
+                ref={(input) => this.email = input} />
+              <input 
+                name="password" 
+                placeholder="Password" 
+                type="password" 
+                autoComplete="current-password" 
+                ref = {(input) => this.password = input} />
+              <input 
+                name="name" 
+                placeholder="Full Name" 
+                type="text" 
+                autoComplete="username" 
+                ref = {(input) => this.name = input} />
+              <button type="submit">Sign Up</button>
+            </form>
+          </div>
         </div>
-        <h2>Sign up</h2>
-        <form onSubmit={this.handleSignup} >
-          <input 
-            name="email" 
-            placeholder="Email" 
-            autoComplete="username" 
-            ref={(input) => this.email = input} />
-          <input 
-            name="password" 
-            placeholder="Password" 
-            type="password" 
-            autoComplete="current-password" 
-            ref = {(input) => this.password = input} />
-          <input 
-            name="name" 
-            placeholder="Full Name" 
-            type="text" 
-            autoComplete="username" 
-            ref = {(input) => this.name = input} />
-          <input type="submit"/>
-        </form>
       </div>
     )
   }
