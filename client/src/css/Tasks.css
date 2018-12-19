@@ -25,6 +25,25 @@
 	display: grid;
 }
 
+#task-form > * {
+  padding: 15px 0px;
+}
+
+.form-control {
+	width: 120px;
+}
+
+.assigned-to-row {
+	display: grid;
+  grid-template-columns: 50% 50%;
+  border-bottom: 1px solid #e0e6e8;
+}
+
+.notes {
+	width: 98%;
+  height: 50px;
+}
+
 .datetime {
 	margin: 0 auto;
 }

@@ -294,30 +294,31 @@ export default class TaskForm extends React.Component {
                 <input type="checkbox" checked={this.state.recurring} onChange={this.handleRecurringChange}/>
               </div>
               <div>
-                <span>Repeat every</span>
+                <span>Repeat every </span>
                 <input value={this.state.recurring_amount} className='recurring-amount' name='recurring-amount' type="number" onChange={this.handleRecurringDaysChange}/>
-                <span>days</span>
+                <span> days</span>
               </div>
             </div>
           </div>
 
-          <div>
-            <label>Assigned To: </label>
-            <select value={this.state.assigned_to} onChange={this.handleDropdown} name="assigned_to">
-              {users}
-            </select>
+          <div className="assigned-to-row">
+            <div>
+              <label>Assigned To: </label>
+              <select value={this.state.assigned_to} onChange={this.handleDropdown} name="assigned_to">
+                {users}
+              </select>
+            </div>
+
+            <div>
+              <label>Category: </label>
+              <select value={this.state.category_id} onChange={this.handleDropdown} name="category_id">
+                {categories}
+              </select>
+            </div>
           </div>
 
           <div>
-            <label>Notes: </label>
-            <textarea value={this.state.notes} name='notes' onChange={this.handleNotesChange}/>
-          </div>
-
-          <div>
-            <label>Category: </label>
-            <select value={this.state.category_id} onChange={this.handleDropdown} name="category_id">
-              {categories}
-            </select>
+            <textarea className="notes" value={this.state.notes} name='notes' onChange={this.handleNotesChange} placeholder="Notes"/>
           </div>
 
 	        <input 

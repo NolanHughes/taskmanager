@@ -76,7 +76,7 @@ export default class Signup extends React.Component {
             ref = {(input) => this.password = input} />
           <input 
             name="name" 
-            placeholder="Name" 
+            placeholder="Full Name" 
             type="text" 
             autoComplete="username" 
             ref = {(input) => this.name = input} />
