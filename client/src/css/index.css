@@ -23,14 +23,6 @@ a {
   cursor: not-allowed;
 }
 
-.task {
-  padding-top: 10px;
-  border-bottom: solid 1px #ccc;
-  display: grid;
-  grid-template-columns: 6% 94%;
-  align-items: center;
-}
-
 .clickable-task-portion {
   display: grid;
   grid-template-columns: 60% 10% 30%;

@@ -4,6 +4,9 @@ import $ from 'jquery'
 
 import {formatDate} from '../utils/format';
 
+import '../css/Tasks.css'
+import '../css/Index.css'
+
 export default class Task extends React.Component {
 
 
@@ -40,7 +43,8 @@ export default class Task extends React.Component {
       headers: JSON.parse(sessionStorage.getItem('user'))
     })
     .done((data) => {
-      this.props.handleAddingTask(data);      
+      this.props.handleAddingTask(data);
+      alert("Your recurring task will be updated.")      
     })
     .fail((response) => {
       this.setState({
@@ -78,9 +82,9 @@ export default class Task extends React.Component {
 
 		return(
 		  <div className='task'>
-        <button onClick={this.deleteTask}>
-          Delete
-        </button>
+        <svg className="check-icon" focusable="false" viewBox="0 0 32 32" onClick={this.deleteTask}>
+          <path d="M10.9,26.2c-0.5,0-1-0.2-1.4-0.6l-6.9-6.9c-0.8-0.8-0.8-2,0-2.8c0.8-0.8,2-0.8,2.8,0l5.4,5.4L26.8,5.4c0.8-0.8,2-0.8,2.8,0s0.8,2,0,2.8L12.3,25.6C11.9,26,11.4,26.2,10.9,26.2z"></path>
+        </svg>
         <div className="clickable-task-portion" onClick={() => this.handleEditClick(this.props.task.id)}>
   		    <span className="title">{this.props.task.title}</span>
   		   	<p>{formatDate(this.props.task.due_by)} | </p>

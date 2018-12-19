@@ -33,7 +33,7 @@ a {
   padding-top: 10px;
   border-bottom: solid 1px #ccc;
   display: grid;
-  grid-template-columns: 6% 94%;
+  grid-template-columns: 3% 97%;
   align-items: center;
 }
 
