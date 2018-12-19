@@ -336,6 +336,6 @@ export default class TaskForm extends React.Component {
 }
 
 TaskForm.defaultProps = {
-  apiUrl: 'http://localhost:3000'
-  // apiUrl: 'https://thetaskmanager.herokuapp.com'
+  // apiUrl: 'http://localhost:3000'
+  apiUrl: 'https://thetaskmanager.herokuapp.com'
 };

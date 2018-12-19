@@ -88,6 +88,6 @@ export default class Signup extends React.Component {
 }
 
 Signup.defaultProps = {
-  apiUrl: 'http://localhost:3000'
-  // apiUrl: 'https://thetaskmanager.herokuapp.com'
+  // apiUrl: 'http://localhost:3000'
+  apiUrl: 'https://thetaskmanager.herokuapp.com'
 };
