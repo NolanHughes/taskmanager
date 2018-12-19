@@ -9,6 +9,34 @@
 	flex: 0 1 50vw;
 }
 
+#sign-in {
+	flex: 0 1 25vw;
+	text-align: center;
+}
+
+#sign-in form {
+	display: grid;
+}
+
+#sign-in form > * {	
+  margin: 0px auto 15px;
+  border-radius: 4px;
+ 	height: 20px;
+}
+
+#sign-in form input {
+	width: 75%;
+}
+
+#sign-in form button {
+	width: 25%;
+}
+
+#sign-in form button:hover {
+	background-color: #008ce3;
+	color: white;
+}
+
 .tasks {
 	flex: 0 1 60vw;
 	background-color: white;

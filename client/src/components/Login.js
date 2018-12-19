@@ -55,16 +55,20 @@ export default class Login extends React.Component {
     return (
       <div>
         <AppHeader />
-        <div className="login-errors">
-          {errors}
+        <div className="container">
+          <div className="tasks" id="sign-in">
+            <div className="login-errors">
+              {errors}
+            </div>
+            <h2>Sign in</h2>
+            <form onSubmit={this.handleLogin} >
+              <input name="email" placeholder="Email" autoComplete="username" ref={(input) => this.email = input} />
+              <input name="password" placeholder="Password" type="password" autoComplete="current-password" ref = {(input) => this.password = input} />
+              <button type="submit">Login</button>
+            </form>
+            {/*<Link to="ForgotPassword">Forgot Password</Link>*/}
+          </div>
         </div>
-        <h2>Sign in</h2>
-        <form onSubmit={this.handleLogin} >
-          <input name="email" placeholder="Email" autoComplete="username" ref={(input) => this.email = input} />
-          <input name="password" placeholder="Password" type="password" autoComplete="current-password" ref = {(input) => this.password = input} />
-          <input type="submit"/>
-        </form>
-        {/*<Link to="ForgotPassword">Forgot Password</Link>*/}
       </div>
     )
   }
