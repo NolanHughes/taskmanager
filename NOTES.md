@@ -7,3 +7,7 @@
 - status_id?
 - priority_id?
 - time_estimate?
+
+
+1. Login be homepage
+2. password confirmation

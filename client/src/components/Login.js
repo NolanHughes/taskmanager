@@ -17,6 +17,7 @@ export default class Login extends React.Component {
 
   handleLogin = (e) => {
     e.preventDefault();
+    // debugger
     $.ajax({
       type: 'POST',
       url: `${this.props.apiUrl}/auth/sign_in`,

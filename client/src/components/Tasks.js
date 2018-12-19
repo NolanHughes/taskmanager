@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom'
 import $ from 'jquery';
 
 import { TasksList } from './TasksList';
@@ -295,12 +296,8 @@ export default class Tasks extends React.Component {
     } else {
       return(
         <div>
-          <AppHeader handleCategoryChange={this.handleCategoryChange} history={this.props.history}/>
-          <div className="container" >
-            <div className="tasks" id="welcome-message">
-              <h2> Please click the log in or sign up button to get started.</h2>
-            </div>
-          </div>
+          
+          <Redirect to="/login"/>
         </div>
       )
     }

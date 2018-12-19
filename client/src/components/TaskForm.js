@@ -156,7 +156,6 @@ export default class TaskForm extends React.Component {
       headers: JSON.parse(sessionStorage.getItem('user'))
     })
     .done((data) => {
-      console.log(data)
       this.resetFormErrors();
       this.props.handleAddingTask(data);      
     })
