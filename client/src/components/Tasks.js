@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import $ from 'jquery';
 
 import { TasksList } from './TasksList';
@@ -297,7 +296,11 @@ export default class Tasks extends React.Component {
       return(
         <div>
           <AppHeader handleCategoryChange={this.handleCategoryChange} history={this.props.history}/>
-          Welcome to The Task Manager. Click the log in or sign up button to get started.
+          <div className="container" >
+            <div className="tasks" id="welcome-message">
+              <h2> Please click the log in or sign up button to get started.</h2>
+            </div>
+          </div>
         </div>
       )
     }

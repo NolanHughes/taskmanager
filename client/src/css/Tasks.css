@@ -4,6 +4,11 @@
   padding: 15px;
 }
 
+#welcome-message {
+	text-align: center;
+	flex: 0 1 50vw;
+}
+
 .tasks {
 	flex: 0 1 60vw;
 	background-color: white;
