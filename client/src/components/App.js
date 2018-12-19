@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Tasks from './Tasks';
-// import Login from './Login'
-// import Signup from './Signup'
+import Login from './Login'
+import Signup from './Signup'
 import '../css/App.css'
 
 // export default (props) => {
@@ -23,7 +23,8 @@ class App extends Component {
     return <Router>
       <Switch>
         <Route path='/' exact component={Tasks} />
-
+				<Route path="/login" component={Login} />
+				<Route path="/signup" component={Signup} />
         <Route component={NotFound} />
       </Switch>
     </Router>
