@@ -149,7 +149,7 @@ export default class TaskForm extends React.Component {
       recurring_amount: this.state.recurring_amount,
       notes: this.state.notes
     };
-
+    debugger
     $.ajax({
       type: 'POST',
       url: `${this.props.apiUrl}/api/v1/tasks`,
