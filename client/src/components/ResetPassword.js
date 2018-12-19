@@ -11,6 +11,8 @@ export default class ResetPassword extends React.Component {
       errors: []
     }
   }
+
+
   
   sendPassword = (e) => {
     e.preventDefault()
@@ -19,20 +21,23 @@ export default class ResetPassword extends React.Component {
 
     if (password === password_confirmation) {
       var vars = {};
-      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      // var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      //     vars[key] = value;
+      // });
+      window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
           vars[key] = value;
       });
 
       $.ajax({
       type: 'PUT',
-      url: 'http://localhost:3000/auth/password',
+      url: `${this.props.apiUrl}/auth/password`,
       data: {
         password: password,
         password_confirmation: password_confirmation
       },
       headers: {
         access_token: vars.reset_password_token,
-        client: 'http://localhost:3000',
+        client: `${this.props.apiUrl}`,
         uid: 'nhughes987@gmail.com'
       }
     })
@@ -59,3 +64,8 @@ export default class ResetPassword extends React.Component {
     )
   }
 }
+
+ResetPassword.defaultProps = {
+  // apiUrl: 'http://localhost:3000'
+  apiUrl: 'https://thetaskmanager.herokuapp.com'
+};

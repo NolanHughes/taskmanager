@@ -12,13 +12,14 @@ export default class ForgotPassword extends React.Component {
     }
   }
 
+
   sendPasswordEmail = (e) => {
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:3000/auth/password',
+      url: `${this.props.apiUrl}/auth/password`,
       data: {
         email: e.target.email.value,
-        redirect_url: 'http://localhost:3000/resetpassword'
+        redirect_url: `${this.props.apiUrl}/resetpassword`
       }
     })
     .done((response) => {   
@@ -45,5 +46,8 @@ export default class ForgotPassword extends React.Component {
   }
 }
 
-
+ForgotPassword.defaultProps = {
+  // apiUrl: 'http://localhost:3000'
+  apiUrl: 'https://thetaskmanager.herokuapp.com'
+};
 

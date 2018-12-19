@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import $ from 'jquery';
 
 import { TasksList } from './TasksList';
@@ -29,10 +29,12 @@ export default class Tasks extends React.Component {
     this.handleDeletingTask = this.handleDeletingTask.bind(this)
   }
 
-  static propTypes = {
-    yourTasks: PropTypes.array.isRequired,
-    assignedTasks: PropTypes.array.isRequired
-  }
+
+
+  // static propTypes = {
+  //   yourTasks: PropTypes.array.isRequired,
+  //   assignedTasks: PropTypes.array.isRequired
+  // }
 
   static defaultProps = {
     yourTasks: [],
@@ -231,7 +233,7 @@ export default class Tasks extends React.Component {
     if(sessionStorage.user) {
       $.ajax({
         type: "GET",
-        url: 'http://localhost:3000/api/v1/tasks',
+        url: `${this.props.apiUrl}/api/v1/tasks`,
         dataType: "JSON",
         headers: JSON.parse(sessionStorage.getItem('user'))
       }).done((data) => {
@@ -306,3 +308,8 @@ export default class Tasks extends React.Component {
     }
   }
 }
+
+Tasks.defaultProps = {
+  // apiUrl: 'http://localhost:3000'
+  apiUrl: 'https://thetaskmanager.herokuapp.com'
+};

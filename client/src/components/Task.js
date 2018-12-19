@@ -5,6 +5,8 @@ import $ from 'jquery'
 import {formatDate} from '../utils/format';
 
 export default class Task extends React.Component {
+
+
   static propTypes = {
 		task: PropTypes.object.isRequired
 	}
@@ -32,7 +34,7 @@ export default class Task extends React.Component {
 
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:3000/api/v1/tasks',
+      url: `${this.props.apiUrl}/api/v1/tasks`,
       data: {task: newTask},
       headers: JSON.parse(sessionStorage.getItem('user'))
     })
@@ -57,7 +59,7 @@ export default class Task extends React.Component {
 
       $.ajax({
         type: "DELETE",
-        url: `http://localhost:3000/api/v1/tasks/${task.id}`,
+        url: `${this.props.apiUrl}/api/v1/tasks/${task.id}`,
         headers: JSON.parse(sessionStorage.getItem('user'))
       })
       .done(() => {
@@ -90,3 +92,8 @@ export default class Task extends React.Component {
 	  )
 	}
 }
+
+Task.defaultProps = {
+  // apiUrl: 'http://localhost:3000'
+  apiUrl: 'https://thetaskmanager.herokuapp.com'
+};

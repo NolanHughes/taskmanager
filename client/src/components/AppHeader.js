@@ -9,7 +9,7 @@ export default class AppHeader extends React.Component {
 		if (sessionStorage.user) {
 			$.ajax({
 				type: 'GET',
-				url: 'http://localhost:3000/auth/validate_token',
+				url: `${this.props.apiUrl}/auth/validate_token`,
 	      dataType: "JSON",
 	      headers: JSON.parse(sessionStorage.getItem('user'))
 			})
@@ -19,12 +19,14 @@ export default class AppHeader extends React.Component {
 		}
 	}
 
+
+
 	handleSignOut = (e) => {
 		e.preventDefault();
 
 		$.ajax({
 			type: 'DELETE',
-			url: 'http://localhost:3000/auth/sign_out',
+			url: `${this.props.apiUrl}/auth/sign_out`,
 			data: JSON.parse(sessionStorage.user)
 		})
 		.done(() => {
@@ -85,4 +87,9 @@ export default class AppHeader extends React.Component {
 		}
 	}
 }
+
+AppHeader.defaultProps = {
+  // apiUrl: 'http://localhost:3000'
+  apiUrl: 'https://thetaskmanager.herokuapp.com'  
+};
 
