@@ -21,7 +21,7 @@ export default class Task extends React.Component {
 
   addRecurringTask(task) {
     var date = new Date()
-    date.setDate(date.getDate() + 1);
+    date.setDate(date.getDate() + task.recurring_amount);
     
     let newTask = {
       title: task.title, 
@@ -29,6 +29,7 @@ export default class Task extends React.Component {
       assigned_to_id: task.assigned_to_id,
       category_id: task.category_id,
       recurring: task.recurring,
+      recurring_amount: task.recurring_amount,
       notes: task.notes
     };
 
@@ -94,6 +95,6 @@ export default class Task extends React.Component {
 }
 
 Task.defaultProps = {
-  // apiUrl: 'http://localhost:3000'
-  apiUrl: 'https://thetaskmanager.herokuapp.com'
+  apiUrl: 'http://localhost:3000'
+  // apiUrl: 'https://thetaskmanager.herokuapp.com'
 };

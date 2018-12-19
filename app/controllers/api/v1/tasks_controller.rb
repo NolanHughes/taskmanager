@@ -51,7 +51,7 @@ module Api::V1
 
     private
       def task_params
-        params.require(:task).permit(:title, :due_by, :assigned_to_id, :category_id, :notes, :recurring)
+        params.require(:task).permit(:title, :due_by, :assigned_to_id, :category_id, :notes, :recurring, :recurring_amount)
       end
   end
 end

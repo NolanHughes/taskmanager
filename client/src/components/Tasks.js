@@ -29,13 +29,6 @@ export default class Tasks extends React.Component {
     this.handleDeletingTask = this.handleDeletingTask.bind(this)
   }
 
-
-
-  // static propTypes = {
-  //   yourTasks: PropTypes.array.isRequired,
-  //   assignedTasks: PropTypes.array.isRequired
-  // }
-
   static defaultProps = {
     yourTasks: [],
     assignedTasks: []
@@ -88,6 +81,7 @@ export default class Tasks extends React.Component {
         t.assigned_to_id = task.assigned_to_id
         t.category_id = task.category_id
         t.recurring = task.recurring
+        t.recurring_amount = task.recurring_amount
         t.notes = task.notes     
 
         const sortedTasks = yourTasks.sort(function(a,b){
@@ -118,6 +112,7 @@ export default class Tasks extends React.Component {
         t.assigned_to_id = task.assigned_to_id
         t.category_id = task.category_id
         t.recurring = task.recurring
+        t.recurring_amount = task.recurring_amount
         t.notes = task.notes
 
         const sortedTasks = assignedTasks.sort(function(a,b){
@@ -310,6 +305,6 @@ export default class Tasks extends React.Component {
 }
 
 Tasks.defaultProps = {
-  // apiUrl: 'http://localhost:3000'
-  apiUrl: 'https://thetaskmanager.herokuapp.com'
+  apiUrl: 'http://localhost:3000'
+  // apiUrl: 'https://thetaskmanager.herokuapp.com'
 };

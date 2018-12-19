@@ -16,7 +16,7 @@ export default class Signup extends React.Component {
 
   handleSignup = (e) => {
     e.preventDefault();
-    // debugger
+    
     $.ajax({
       type: 'POST',
       url: `${this.props.apiUrl}/auth`,
@@ -88,6 +88,6 @@ export default class Signup extends React.Component {
 }
 
 Signup.defaultProps = {
-  // apiUrl: 'http://localhost:3000'
-  apiUrl: 'https://thetaskmanager.herokuapp.com'
+  apiUrl: 'http://localhost:3000'
+  // apiUrl: 'https://thetaskmanager.herokuapp.com'
 };

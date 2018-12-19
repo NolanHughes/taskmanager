@@ -14,8 +14,6 @@ export default class Login extends React.Component {
     }
   }
 
-  
-
   handleLogin = (e) => {
     e.preventDefault();
     $.ajax({
@@ -66,13 +64,13 @@ export default class Login extends React.Component {
           <input name="password" placeholder="Password" type="password" autoComplete="current-password" ref = {(input) => this.password = input} />
           <input type="submit"/>
         </form>
-        <Link to="ForgotPassword">Forgot Password</Link>
+        {/*<Link to="ForgotPassword">Forgot Password</Link>*/}
       </div>
     )
   }
 }
 
 Login.defaultProps = {
-  // apiUrl: 'http://localhost:3000'
-  apiUrl: 'https://thetaskmanager.herokuapp.com'
+  apiUrl: 'http://localhost:3000'
+  // apiUrl: 'https://thetaskmanager.herokuapp.com'
 };

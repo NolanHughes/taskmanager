@@ -19,8 +19,6 @@ export default class AppHeader extends React.Component {
 		}
 	}
 
-
-
 	handleSignOut = (e) => {
 		e.preventDefault();
 
@@ -38,7 +36,6 @@ export default class AppHeader extends React.Component {
 	render () {
 		if(sessionStorage.getItem('user')) {
 			let userName = JSON.parse(sessionStorage.getItem('user')).name
-			// let userId = userEmail.substring(0, userEmail.indexOf("@"))
 			
 			return (
 				<div className="Navbar">       
@@ -89,7 +86,7 @@ export default class AppHeader extends React.Component {
 }
 
 AppHeader.defaultProps = {
-  // apiUrl: 'http://localhost:3000'
-  apiUrl: 'https://thetaskmanager.herokuapp.com'  
+  apiUrl: 'http://localhost:3000'
+  // apiUrl: 'https://thetaskmanager.herokuapp.com'  
 };
 

@@ -21,6 +21,7 @@ export default class TaskForm extends React.Component {
       categories: [],
       category_id: '',
       recurring: false,
+      recurring_amount: 0,
       notes: '',
       formErrors: {},
       formValid: props.formValid,
@@ -61,6 +62,7 @@ export default class TaskForm extends React.Component {
           assigned_to: data.assigned_to_id,
           category_id: data.category_id,
           recurring: data.recurring,
+          recurring_amount: data.recurring_amount,
           notes: data.notes
         });
       });
@@ -144,6 +146,7 @@ export default class TaskForm extends React.Component {
       assigned_to_id: this.state.assigned_to,
       category_id: this.state.category_id,
       recurring: this.state.recurring,
+      recurring_amount: this.state.recurring_amount,
       notes: this.state.notes
     };
 
@@ -172,6 +175,7 @@ export default class TaskForm extends React.Component {
       assigned_to_id: this.state.assigned_to,
       category_id: this.state.category_id,
       recurring: this.state.recurring,
+      recurring_amount: this.state.recurring_amount,
       notes: this.state.notes
     };
     
@@ -194,24 +198,6 @@ export default class TaskForm extends React.Component {
       });
     });  
   }
-
-  // deleteTask = () => {
-  //   const id  = this.props.id
-  //   if(window.confirm("Are you sure you want to complete this task?")) {
-  //     $.ajax({
-  //       type: "DELETE",
-  //       url: `${this.props.apiUrl}/api/v1/tasks/${id}`,
-  //       headers: JSON.parse(sessionStorage.getItem('user'))
-  //     })
-  //     .done(() => {
-  //       console.log('deleted')
-  //       this.props.handleDeletingTask(id);
-  //     })
-  //     .fail((response) => {
-  //       console.log('task deleting failed!');
-  //     });
-  //   }
-  // }
 
   resetFormErrors () {
     this.setState({formErrors: {}})
@@ -247,6 +233,14 @@ export default class TaskForm extends React.Component {
     this.setState({
       recurring: !this.state.recurring
     })
+  }
+
+  handleRecurringDaysChange = (e) => {
+    if (e.target.value !== "") {
+      this.setState({
+        recurring_amount: parseInt(e.target.value)
+      })
+    }
   }
 
   handleNotesChange = (e) => {
@@ -295,16 +289,23 @@ export default class TaskForm extends React.Component {
             </div>
 
             <div>
-              <label>Recurring: </label>
-              <input type="checkbox" checked={this.state.recurring} onChange={this.handleRecurringChange}/>
+              <div>
+                <label>Recurring: </label>
+                <input type="checkbox" checked={this.state.recurring} onChange={this.handleRecurringChange}/>
+              </div>
+              <div>
+                <span>Repeat every</span>
+                <input value={this.state.recurring_amount} className='recurring-amount' name='recurring-amount' type="number" onChange={this.handleRecurringDaysChange}/>
+                <span>days</span>
+              </div>
             </div>
+          </div>
 
-            <div>
-              <label>Assigned To: </label>
-              <select value={this.state.assigned_to} onChange={this.handleDropdown} name="assigned_to">
-                {users}
-              </select>
-            </div>
+          <div>
+            <label>Assigned To: </label>
+            <select value={this.state.assigned_to} onChange={this.handleDropdown} name="assigned_to">
+              {users}
+            </select>
           </div>
 
           <div>
@@ -327,20 +328,12 @@ export default class TaskForm extends React.Component {
           />
 
 	      </form>
-
-{/*        {this.state.editing && (
-          <p>
-            <button onClick={this.deleteTask}>
-              Delete task
-            </button>
-          </p>
-        )}*/}
       </div>
 		)    
 	}
 }
 
 TaskForm.defaultProps = {
-  // apiUrl: 'http://localhost:3000'
-  apiUrl: 'https://thetaskmanager.herokuapp.com'
+  apiUrl: 'http://localhost:3000'
+  // apiUrl: 'https://thetaskmanager.herokuapp.com'
 };
