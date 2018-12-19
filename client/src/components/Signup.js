@@ -37,12 +37,10 @@ export default class Signup extends React.Component {
     })
     .fail((response) => {
       let errors = response.responseJSON.errors.full_messages
-      debugger
       this.setState({
         errors: errors
       })
     });
-
   }
 
   render () {
@@ -80,7 +78,7 @@ export default class Signup extends React.Component {
                 type="text" 
                 autoComplete="username" 
                 ref = {(input) => this.name = input} />
-              <button type="submit">Sign Up</button>
+              <button type="submit" className="login-button">Sign Up</button>
             </form>
           </div>
         </div>
@@ -90,6 +88,6 @@ export default class Signup extends React.Component {
 }
 
 Signup.defaultProps = {
-  apiUrl: 'http://localhost:3000'
-  // apiUrl: 'https://thetaskmanager.herokuapp.com'
+  // apiUrl: 'http://localhost:3000'
+  apiUrl: 'https://thetaskmanager.herokuapp.com'
 };

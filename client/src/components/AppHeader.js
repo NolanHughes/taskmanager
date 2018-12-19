@@ -40,11 +40,9 @@ export default class AppHeader extends React.Component {
 			return (
 				<div className="Navbar">       
 			    <nav className="Navbar__Items Navbar__Items--left">
-				    <Link to='/'>
-				      <h2 className="Navbar__Link">
+				      <h2 className="">
 				        Meyer & O'Connor
 				      </h2>
-			      </Link>
 			        <button id="category1" className="Navbar__Link Navbar__Items--selected"value="1" onClick={this.props.handleCategoryChange}>
 			        	Marketing
 			        </button>
@@ -55,10 +53,10 @@ export default class AppHeader extends React.Component {
 			    </nav>
 
 			    <nav className="Navbar__Items Navbar__Items--right">
-			      <div className="Navbar__Link">
+			      <div className="">
 			        <p>
 								<span className="userId-navbar">Welcome {userName}</span>
-								<button className="navbar-buttons" onClick={this.handleSignOut} >Sign out</button>
+								<button className="navbar-buttons sign-out" onClick={this.handleSignOut} >Sign out</button>
 							</p>
 			      </div>
 			    </nav>
@@ -68,7 +66,7 @@ export default class AppHeader extends React.Component {
 			return (
 				<div className="Navbar">       
 			    <nav className="Navbar__Items Navbar__Items--left">
-				    <h2 className="Navbar__Link">
+				    <h2 className="">
 				      The Task Manager
 				    </h2>
 			    </nav>
@@ -86,7 +84,7 @@ export default class AppHeader extends React.Component {
 }
 
 AppHeader.defaultProps = {
-  apiUrl: 'http://localhost:3000'
-  // apiUrl: 'https://thetaskmanager.herokuapp.com'  
+  // apiUrl: 'http://localhost:3000'
+  apiUrl: 'https://thetaskmanager.herokuapp.com'  
 };
 

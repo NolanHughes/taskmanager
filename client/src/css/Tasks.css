@@ -92,6 +92,10 @@
 	height: 15px;
 }
 
+.tasks svg:hover {
+	cursor: pointer;
+}
+
 #tasks-header:hover {
 	cursor: pointer;
 	color: #008ce3;
@@ -128,6 +132,7 @@
 
 #add-task button:hover {
 	background: #006eb3;
+	cursor: pointer;
 }
 
 #add-task form {

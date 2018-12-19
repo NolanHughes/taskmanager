@@ -13,6 +13,7 @@
 
 .Navbar__Items h2 {
   margin: 10px 0px 5px;
+  color: #008ce3;
 }
 
 .Navbar__Items--right {
@@ -21,6 +22,10 @@
 
 .Navbar__Items--left {
 	display: block;
+}
+
+.Navbar__Link:hover {
+  cursor: pointer;
 }
 
 .Navbar__Items--selected {
@@ -64,4 +69,8 @@
   border-radius: 4px;
   border: none;
   padding: 6px;
+}
+
+.sign-out:hover {
+  cursor: pointer;
 }

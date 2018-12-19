@@ -1,4 +1,3 @@
-- recurring - Have it be based on how often the user selects it to recur. Currently just sets it to the next day after deletion.
 - Allow for retrieving password
 - Auth to sign up
 

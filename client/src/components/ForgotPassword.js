@@ -46,7 +46,7 @@ export default class ForgotPassword extends React.Component {
 }
 
 ForgotPassword.defaultProps = {
-  apiUrl: 'http://localhost:3000'
-  // apiUrl: 'https://thetaskmanager.herokuapp.com'
+  // apiUrl: 'http://localhost:3000'
+  apiUrl: 'https://thetaskmanager.herokuapp.com'
 };
 

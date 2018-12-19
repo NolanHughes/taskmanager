@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import $ from 'jquery';
 
 import AppHeader from './AppHeader'
+import '../css/Login.css'
 
 
 export default class Login extends React.Component {
@@ -60,11 +61,11 @@ export default class Login extends React.Component {
             <div className="login-errors">
               {errors}
             </div>
-            <h2>Sign in</h2>
+            <h2>Log In</h2>
             <form onSubmit={this.handleLogin} >
               <input name="email" placeholder="Email" autoComplete="username" ref={(input) => this.email = input} />
               <input name="password" placeholder="Password" type="password" autoComplete="current-password" ref = {(input) => this.password = input} />
-              <button type="submit">Login</button>
+              <button type="submit" className="login-button">Log In</button>
             </form>
             {/*<Link to="ForgotPassword">Forgot Password</Link>*/}
           </div>
@@ -75,6 +76,6 @@ export default class Login extends React.Component {
 }
 
 Login.defaultProps = {
-  apiUrl: 'http://localhost:3000'
-  // apiUrl: 'https://thetaskmanager.herokuapp.com'
+  // apiUrl: 'http://localhost:3000'
+  apiUrl: 'https://thetaskmanager.herokuapp.com'
 };
