@@ -19,7 +19,7 @@ export default class Login extends React.Component {
     e.preventDefault();
     $.ajax({
       type: 'POST',
-      url: `${this.props.apiUrl}/auth/sign_in`,
+      url: `http://localhost:3000/auth/sign_in`,
       data: {
         email: this.email.value,
         password: this.password.value
@@ -76,6 +76,6 @@ export default class Login extends React.Component {
 }
 
 Login.defaultProps = {
-  // apiUrl: 'http://localhost:3000'
-  apiUrl: 'https://thetaskmanager.herokuapp.com'
+  apiUrl: 'http://localhost:3000'
+  // apiUrl: 'https://thetaskmanager.herokuapp.com'
 };

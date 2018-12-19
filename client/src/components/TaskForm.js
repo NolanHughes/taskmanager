@@ -149,7 +149,6 @@ export default class TaskForm extends React.Component {
       recurring_amount: this.state.recurring_amount,
       notes: this.state.notes
     };
-    console.log(task)
     $.ajax({
       type: 'POST',
       url: `${this.props.apiUrl}/api/v1/tasks`,
@@ -157,10 +156,12 @@ export default class TaskForm extends React.Component {
       headers: JSON.parse(sessionStorage.getItem('user'))
     })
     .done((data) => {
+      console.log(data)
       this.resetFormErrors();
       this.props.handleAddingTask(data);      
     })
     .fail((response) => {
+      console.log(response)
       this.setState({
         formErrors: response.responseJSON,
         formValid: false
@@ -335,6 +336,6 @@ export default class TaskForm extends React.Component {
 }
 
 TaskForm.defaultProps = {
-  // apiUrl: 'http://localhost:3000'
-  apiUrl: 'https://thetaskmanager.herokuapp.com'
+  apiUrl: 'http://localhost:3000'
+  // apiUrl: 'https://thetaskmanager.herokuapp.com'
 };
