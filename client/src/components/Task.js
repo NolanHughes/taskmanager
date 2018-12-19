@@ -32,7 +32,7 @@ export default class Task extends React.Component {
 
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:3000/api/v1/tasks',
+      url: 'https://thetaskmanager.herokuapp.com/api/v1/tasks',
       data: {task: newTask},
       headers: JSON.parse(sessionStorage.getItem('user'))
     })
@@ -57,7 +57,7 @@ export default class Task extends React.Component {
 
       $.ajax({
         type: "DELETE",
-        url: `http://localhost:3000/api/v1/tasks/${task.id}`,
+        url: `https://thetaskmanager.herokuapp.com/api/v1/tasks/${task.id}`,
         headers: JSON.parse(sessionStorage.getItem('user'))
       })
       .done(() => {

@@ -231,7 +231,7 @@ export default class Tasks extends React.Component {
     if(sessionStorage.user) {
       $.ajax({
         type: "GET",
-        url: 'http://localhost:3000/api/v1/tasks',
+        url: 'https://thetaskmanager.herokuapp.com/api/v1/tasks',
         dataType: "JSON",
         headers: JSON.parse(sessionStorage.getItem('user'))
       }).done((data) => {

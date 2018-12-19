@@ -16,7 +16,7 @@ export default class Login extends React.Component {
     e.preventDefault();
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:3000/auth/sign_in',
+      url: 'https://thetaskmanager.herokuapp.com/auth/sign_in',
       data: {
         email: this.email.value,
         password: this.password.value

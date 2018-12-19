@@ -17,7 +17,7 @@ export default class Signup extends React.Component {
 
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:3000/auth',
+      url: 'https://thetaskmanager.herokuapp.com/auth',
       data: {
         email: this.email.value,
         password: this.password.value,

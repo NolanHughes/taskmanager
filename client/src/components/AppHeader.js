@@ -9,7 +9,7 @@ export default class AppHeader extends React.Component {
 		if (sessionStorage.user) {
 			$.ajax({
 				type: 'GET',
-				url: 'http://localhost:3000/auth/validate_token',
+				url: 'https://thetaskmanager.herokuapp.com/auth/validate_token',
 	      dataType: "JSON",
 	      headers: JSON.parse(sessionStorage.getItem('user'))
 			})
