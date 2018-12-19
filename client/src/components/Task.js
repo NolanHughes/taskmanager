@@ -5,7 +5,6 @@ import $ from 'jquery'
 import {formatDate} from '../utils/format';
 
 import '../css/Tasks.css'
-import '../css/Index.css'
 
 export default class Task extends React.Component {
 
