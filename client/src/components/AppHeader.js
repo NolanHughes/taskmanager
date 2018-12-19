@@ -24,7 +24,7 @@ export default class AppHeader extends React.Component {
 
 		$.ajax({
 			type: 'DELETE',
-			url: 'http://localhost:3000/auth/sign_out',
+			url: 'https://thetaskmanager.herokuapp.com/auth/sign_out',
 			data: JSON.parse(sessionStorage.user)
 		})
 		.done(() => {
