@@ -6,4 +6,8 @@ class ApplicationController < ActionController::API
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email])
   end
+
+  def fallback_index_html
+    render :file => 'public/index.html'
+  end
 end
