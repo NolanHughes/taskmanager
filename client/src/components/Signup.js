@@ -21,6 +21,7 @@ export default class Signup extends React.Component {
       data: {
         email: e.target.email.value,
         password: e.target.password.value,
+        password_confirmation: e.target.password_confirmation.value,
         name: e.target.name.value
       }
     })
@@ -73,6 +74,12 @@ export default class Signup extends React.Component {
                 autoComplete="current-password" 
                 ref = {(input) => this.password = input} />
               <input 
+                name="password_confirmation" 
+                placeholder="Password Confirmation" 
+                type="password" 
+                autoComplete="current-password" 
+                ref = {(input) => this.password_confirmation = input} />
+              <input 
                 name="name" 
                 placeholder="Full Name" 
                 type="text" 
@@ -88,6 +95,6 @@ export default class Signup extends React.Component {
 }
 
 Signup.defaultProps = {
-  // apiUrl: 'http://localhost:3000'
-  apiUrl: 'https://thetaskmanager.herokuapp.com'
+  apiUrl: 'http://localhost:3000'
+  // apiUrl: 'https://thetaskmanager.herokuapp.com'
 };

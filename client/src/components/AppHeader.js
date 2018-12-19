@@ -84,7 +84,7 @@ export default class AppHeader extends React.Component {
 }
 
 AppHeader.defaultProps = {
-  // apiUrl: 'http://localhost:3000'
-  apiUrl: 'https://thetaskmanager.herokuapp.com'  
+  apiUrl: 'http://localhost:3000'
+  // apiUrl: 'https://thetaskmanager.herokuapp.com'  
 };
 
