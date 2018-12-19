@@ -9,7 +9,7 @@ export default class AppHeader extends React.Component {
 		if (sessionStorage.user) {
 			$.ajax({
 				type: 'GET',
-				url: 'https://thetaskmanager.herokuapp.com/auth/validate_token',
+				url: 'http://localhost:3000/auth/validate_token',
 	      dataType: "JSON",
 	      headers: JSON.parse(sessionStorage.getItem('user'))
 			})
@@ -24,7 +24,7 @@ export default class AppHeader extends React.Component {
 
 		$.ajax({
 			type: 'DELETE',
-			url: 'https://thetaskmanager.herokuapp.com/auth/sign_out',
+			url: 'http://localhost:3000/auth/sign_out',
 			data: JSON.parse(sessionStorage.user)
 		})
 		.done(() => {

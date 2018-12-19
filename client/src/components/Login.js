@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import $ from 'jquery';
 
 import AppHeader from './AppHeader'
@@ -16,7 +17,7 @@ export default class Login extends React.Component {
     e.preventDefault();
     $.ajax({
       type: 'POST',
-      url: 'https://thetaskmanager.herokuapp.com/auth/sign_in',
+      url: 'http://localhost:3000/auth/sign_in',
       data: {
         email: this.email.value,
         password: this.password.value
@@ -62,6 +63,7 @@ export default class Login extends React.Component {
           <input name="password" placeholder="Password" type="password" autoComplete="current-password" ref = {(input) => this.password = input} />
           <input type="submit"/>
         </form>
+        <Link to="ForgotPassword">Forgot Password</Link>
       </div>
     )
   }

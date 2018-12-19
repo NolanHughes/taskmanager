@@ -49,7 +49,7 @@ export default class TaskForm extends React.Component {
     if(this.props.editing) {
       $.ajax({
         type: "GET",
-        url: `https://thetaskmanager.herokuapp.com/api/v1/tasks/${this.props.id}`,
+        url: `http://localhost:3000/api/v1/tasks/${this.props.id}`,
         dataType: "JSON",
         headers: JSON.parse(sessionStorage.getItem('user'))
       }).done((data) => {
@@ -65,7 +65,7 @@ export default class TaskForm extends React.Component {
 
       $.ajax({
         type: "GET",
-        url: 'https://thetaskmanager.herokuapp.com/api/v1/categories',
+        url: 'http://localhost:3000/api/v1/categories',
         dataType: "JSON"
       }).done((data) => {
         this.setState({
@@ -79,7 +79,7 @@ export default class TaskForm extends React.Component {
 
       $.ajax({
         type: "GET",
-        url: 'https://thetaskmanager.herokuapp.com/api/v1/categories',
+        url: 'http://localhost:3000/api/v1/categories',
         dataType: "JSON"
       }).done((data) => {
         this.setState({
@@ -147,7 +147,7 @@ export default class TaskForm extends React.Component {
 
     $.ajax({
       type: 'POST',
-      url: 'https://thetaskmanager.herokuapp.com/api/v1/tasks',
+      url: 'http://localhost:3000/api/v1/tasks',
       data: {task: task},
       headers: JSON.parse(sessionStorage.getItem('user'))
     })
@@ -175,7 +175,7 @@ export default class TaskForm extends React.Component {
     
     $.ajax({
       type: "PATCH",
-      url: `https://thetaskmanager.herokuapp.com/api/v1/tasks/${this.props.id}`,
+      url: `http://localhost:3000/api/v1/tasks/${this.props.id}`,
       data: {task: task},
       headers: JSON.parse(sessionStorage.getItem('user'))
     })

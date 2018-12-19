@@ -14,13 +14,13 @@ export default class Signup extends React.Component {
 
   handleSignup = (e) => {
     e.preventDefault();
-
+    // debugger
     $.ajax({
       type: 'POST',
-      url: 'https://thetaskmanager.herokuapp.com/auth',
+      url: 'http://localhost:3000/auth',
       data: {
-        email: this.email.value,
-        password: this.password.value,
+        email: e.target.email.value,
+        password: e.target.password.value,
         name: e.target.name.value
       }
     })
@@ -37,7 +37,7 @@ export default class Signup extends React.Component {
     })
     .fail((response) => {
       let errors = response.responseJSON.errors.full_messages
-
+      debugger
       this.setState({
         errors: errors
       })

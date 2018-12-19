@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Tasks from './Tasks';
 import Login from './Login'
 import Signup from './Signup'
+import ForgotPassword from './ForgotPassword'
+import ResetPassword from './ResetPassword'
 import '../css/App.css'
 
 // export default (props) => {
@@ -25,6 +27,8 @@ class App extends Component {
         <Route path='/' exact component={Tasks} />
 				<Route path="/login" component={Login} />
 				<Route path="/signup" component={Signup} />
+        <Route path="/forgotpassword" component={ForgotPassword} />
+        <Route path="/auth/password" component={ResetPassword} />
         <Route path="*" component={NotFound} />
       </Switch>
     </Router>
