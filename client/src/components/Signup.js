@@ -37,7 +37,7 @@ export default class Signup extends React.Component {
       this.props.history.push('/')
     })
     .fail((response) => {
-      let errors = response.responseJSON.error.full_messages
+      let errors = response.responseJSON.error
       this.setState({
         errors: errors
       })
