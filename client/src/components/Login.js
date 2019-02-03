@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import $ from 'jquery';
 
 import AppHeader from './AppHeader'
@@ -17,7 +16,7 @@ export default class Login extends React.Component {
 
   handleLogin = (e) => {
     e.preventDefault();
-    // debugger
+
     $.ajax({
       type: 'POST',
       url: `${this.props.apiUrl}/auth/sign_in`,
