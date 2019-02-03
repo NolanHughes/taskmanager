@@ -14,7 +14,7 @@ export default class Signup extends React.Component {
 
   handleSignup = (e) => {
     e.preventDefault();
-    
+
     $.ajax({
       type: 'POST',
       url: `${this.props.apiUrl}/auth`,
@@ -37,7 +37,7 @@ export default class Signup extends React.Component {
       this.props.history.push('/')
     })
     .fail((response) => {
-      let errors = response.responseJSON.errors.full_messages
+      let errors = response.responseJSON.error.full_messages
       this.setState({
         errors: errors
       })

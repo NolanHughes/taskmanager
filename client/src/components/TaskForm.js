@@ -86,6 +86,7 @@ export default class TaskForm extends React.Component {
         url: `${this.props.apiUrl}/api/v1/categories`,
         dataType: "JSON"
       }).done((data) => {
+        debugger
         this.setState({
           categories: data,
           category_id: data[0].id,
