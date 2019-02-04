@@ -6,7 +6,7 @@ import '../css/Navbar.css'
 
 export default class AppHeader extends React.Component { 
 	componentDidMount () {
-		debugger
+		console.log(sessionStorage)
 		if (sessionStorage.user) {
 			$.ajax({
 				type: 'GET',
@@ -14,8 +14,11 @@ export default class AppHeader extends React.Component {
 	      dataType: "JSON",
 	      headers: JSON.parse(sessionStorage.getItem('user'))
 			})
+			.done((data) => {
+				console.log(data)
+			})
 			.fail((data) => {
-				debugger
+				console.log(data)
 				this.props.history.push('/login');
 			})
 		}
